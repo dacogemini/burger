@@ -1,0 +1,69 @@
+<h1>Mangia!</h1>
+
+<!-- Pass in data from server.js -->
+<ul>
+  {{#each burgers}}
+      <li>
+          <p><span class="label">ID:</span> {{this.id}}</p>
+      <p><span class="label">burger_name:</span> {{this.burger_name}}</p>
+      <p><span class="label">isDevoured?:</span> {{this.devoured}}</p>
+
+      </li>
+  {{/each}}
+</ul>
+
+<h2>burgers that are not devoured!</h2>
+
+<ul>
+  
+  {{#each burgers}}
+    <li>
+      {{#unless this.devoured}}
+      <p><span class="label">burger_name:</span> {{this.burger_name}}</p>
+      <p><span class="label">Devoured?:</span> {{this.devoured}}</p>
+      {{!-- <pinside EACH loop></p> --}}
+        
+      {{/unless}}
+  {{/each}}
+  </li>
+</ul>
+
+<h2>burgers that are devoured!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if this.devoured }}
+    {{!-- <pinside EACH loop></p> --}}
+      {{this.burger_name}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a burger</h2>
+<form action="/api/burgers/create" method="POST">
+
+  <div class="form-group">
+    <label for="ca">burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="devoured">devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked> devoured!<br>
+    <input type="radio" name="devoured" value="0"> not eaten
+  </div>
+
+  <ul>
+    <li>
+    {{burger_name}}
+
+      <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+        {{#if devoured}}This burger is righteous{{else}}Burger Time!{{/if}}
+      </button>
+
+      <button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
+    </li>
+  </ul>
+
+  <button type="submit">Add burger</button>
+</form>
