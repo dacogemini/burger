@@ -26,21 +26,21 @@ Check out this video of the app for a run-through of how it works.
 
 _App Setup_
 
-- [ ] Create a GitHub repo called burger and clone it to your computer.
+- [X] Create a GitHub repo called burger and clone it to your computer.
 
-- [ ] Make a package.json file by running npm init from the command line.
+- [X] Make a package.json file by running npm init from the command line.
 
-- [ ] Install the Express npm package: npm install express.
+- [X] Install the Express npm package: npm install express.
 
-- [ ] Create a server.js file.
+- [X] Create a server.js file.
 
-- [ ] Install the Handlebars npm package: npm install express-handlebars.
+- [X] Install the Handlebars npm package: npm install express-handlebars.
 
-- [ ] Install the body-parser npm package: npm install body-parser.
+- [X] Install the body-parser npm package: npm install body-parser.
 
-- [ ] Install MySQL npm package: npm install mysql.
+- [X] Install MySQL npm package: npm install mysql.
 
-- [ ] Require the following npm packages inside of the server.js file:
+- [X] Require the following npm packages inside of the server.js file:
 ```
 express
 body-parser
@@ -62,51 +62,61 @@ body-parser
 |   └── layouts
 ├── package.json
 ├── package-lock.json
-└── server.js```
-DB Setup
+└── server.js
+```
+_DB Setup_
+
 Inside your burger directory, create a folder named db.
 
 In the db folder, create a file named schema.sql. Write SQL queries this file that do the following:
 
-Create the burgers_db.
-Switch to or use the burgers_db.
-Create a burgers table with these fields:
-id: an auto incrementing int that serves as the primary key.
-burger_name: a string.
-devoured: a boolean.
-Still in the db folder, create a seeds.sql file. In this file, write insert queries to populate the burgers table with at least three entries.
+- [X] Create the burgers_db.
+- [X] Switch to or use the burgers_db.
 
-Run the schema.sql and seeds.sql files into the mysql server from the command line
+* Create a burgers table with these fields:
+- [X] id: an auto incrementing int that serves as the primary key.
+- [X] burger_name: a string.
+- [X] devoured: a boolean.
 
-Now you're going to run these SQL files.
+* Still in the db folder, create a seeds.sql file.
 
-Make sure you're in the db folder of your app.
+- [X] In this file, write insert queries to populate the burgers table with at least three entries.
 
-Start MySQL command line tool and login: mysql -u root -p.
+~~Run the schema.sql and seeds.sql files into the mysql server from the command line~~
 
-With the mysql> command line tool running, enter the command source schema.sql. This will run your schema file and all of the queries in it -- in other words, you'll be creating your database.
+~~Now you're going to run these SQL files.~~
 
-Now insert the entries you defined in seeds.sql by running the file: source seeds.sql.
+~~Make sure you're in the db folder of your app.~~
 
-Close out of the MySQL command line tool: exit.
+~~Start MySQL command line tool and login: mysql -u root -p.~~
 
-Config Setup
-Inside your burger directory, create a folder named config.
+~~With the mysql command line tool running, enter the command source schema.sql. This will run your schema file and all of the queries in it -- in other words, you'll be creating your database.~~
 
-Create a connection.js file inside config directory.
+~~Now insert the entries you defined in seeds.sql by running the file: source seeds.sql.~~
 
-Inside the connection.js file, setup the code to connect Node to MySQL.
+~~Close out of the MySQL command line tool: exit.~~
 
-Export the connection.
+_Config Setup_
 
-Create an orm.js file inside config directory.
-Import (require) connection.js into orm.js
+- [X] Inside your burger directory, create a folder named config.
+
+- [X] Create a connection.js file inside config directory.
+
+- [X] Inside the connection.js file, setup the code to connect Node to MySQL.
+
+- [X] Export the connection.
+
+_Create an orm.js_ 
+
+- [X] file inside config directory.
+- [X] Import (require) connection.js into orm.js
 
 In the orm.js file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
 
-selectAll()
-insertOne()
-updateOne()
+* selectAll()
+* insertOne()
+* updateOne()
+
 Export the ORM object in module.exports.
 
 Model setup
